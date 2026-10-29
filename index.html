@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AntarSvara — Tarot &amp; Sound Healing</title>
+<meta name="description" content="AntarSvara: tarot guidance and sound healing. Hear what lies within.">
+<meta name="theme-color" content="#0b0a1f">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap">
+<link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+
+<!-- the universe: one fixed canvas behind everything -->
+<canvas id="sky" aria-hidden="true"></canvas>
+<div class="nebula" aria-hidden="true"><i class="n1"></i><i class="n2"></i><i class="n3"></i></div>
+
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="AntarSvara home">
+    <img src="images/emblem.png" alt="" width="320" height="320">
+    <span>AntarSvara</span>
+  </a>
+  <nav class="links" aria-label="Main">
+    <a href="#draw">Draw a card</a>
+    <a href="#readings">Readings</a>
+    <a href="#sound">Sound healing</a>
+    <a href="#about">About</a>
+  </nav>
+  <a class="btn small" href="https://ig.me/m/antarsvara" target="_blank" rel="noopener">Book a reading</a>
+</header>
+
+<main>
+<!-- hero -->
+<section class="hero" id="top">
+  <!-- Spider-Man style reveal: the cards wipe away to show the universe within -->
+  <canvas class="hero-reveal" id="reveal" aria-hidden="true"></canvas>
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="twinkle">✦</span> Tarot guidance · Sound healing</p>
+    <h1 class="split">Hear what lies <em>within</em></h1>
+    <p class="lede">Gentle tarot readings and healing sound for the questions you carry quietly. No fear, no fortune-telling drama. Just clarity, one card at a time.</p>
+    <div class="cta-row">
+      <a class="btn" href="#draw">Draw your card</a>
+      <a class="btn ghost" href="#readings">See readings</a>
+    </div>
+  </div>
+
+  <!-- the emblem as a sun, with planets in orbit -->
+  <div class="cosmos" aria-hidden="true">
+    <div class="orbit o1"><i class="planet p-gold"></i></div>
+    <div class="orbit o2"><i class="planet p-blush"></i><i class="planet p-moonlet"></i></div>
+    <div class="orbit o3"><i class="planet p-ringed"><b></b></i></div>
+    <div class="orbit o4"><i class="planet p-sage"></i></div>
+    <div class="core">
+      <div class="halo"></div>
+      <img src="images/emblem.png" alt="">
+    </div>
+  </div>
+
+  <div class="reveal-hint" id="revealHint">▸ Move across the cards to reveal what lies within ◂</div>
+  <a class="scroll-cue" href="#draw" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- words marquee -->
+<div class="drift" aria-hidden="true"><div class="track" id="driftTrack"></div></div>
+
+<!-- draw a card -->
+<section class="section draw" id="draw">
+  <div class="head reveal">
+    <p class="eyebrow">Your free card for today</p>
+    <h2>Take a breath. <em>Pick a card.</em></h2>
+    <p class="sub">Hold a question in your mind, anything at all. Shuffle if you like, then choose the card that feels right. There are no wrong picks.</p>
+  </div>
+  <div class="table">
+    <div class="deck" id="deck" role="list" aria-label="Tarot deck, choose one card"></div>
+    <div class="reading" id="reading" aria-live="polite">
+      <div class="slot" id="slot"></div>
+      <div class="meaning" id="meaning">
+        <p class="eyebrow">Waiting for your card</p>
+        <h3>The stars are listening</h3>
+        <p>Your card's meaning will appear here.</p>
+      </div>
+    </div>
+  </div>
+  <div class="draw-actions">
+    <button class="btn ghost" id="shuffle" type="button">✦ Shuffle the deck</button>
+    <button class="btn ghost" id="again" type="button" hidden>Draw again</button>
+  </div>
+</section>
+
+<!-- readings -->
+<section class="section" id="readings">
+  <div class="head reveal">
+    <p class="eyebrow">Tarot reading menu</p>
+    <h2>Choose the reading <em>that fits your question</em></h2>
+    <p class="sub">Every reading is done personally, with care. Book by sending “TAROT” on Instagram.</p>
+  </div>
+  <div class="menu">
+    <article class="offer reveal">
+      <div class="offer-top"><span class="moon-ico">☾</span><p class="tag">Quick clarity</p></div>
+      <h3>Mini Clarity Reading</h3>
+      <p class="price">₹79</p>
+      <ul><li>1 basic question</li><li>1–3 tarot cards</li><li>Short, focused interpretation</li></ul>
+      <a class="btn ghost" href="https://ig.me/m/antarsvara" target="_blank" rel="noopener">Book on Instagram</a>
+    </article>
+    <article class="offer featured reveal">
+      <p class="ribbon">Most loved</p>
+      <div class="offer-top"><span class="moon-ico">◐</span><p class="tag">Go deeper</p></div>
+      <h3>Focused Tarot Reading</h3>
+      <p class="price">₹199</p>
+      <ul><li>1 detailed question</li><li>3–5 tarot cards</li><li>Deeper interpretation and reflective guidance</li></ul>
+      <a class="btn" href="https://ig.me/m/antarsvara" target="_blank" rel="noopener">Book on Instagram</a>
+    </article>
+    <article class="offer reveal">
+      <div class="offer-top"><span class="moon-ico">●</span><p class="tag">Full session</p></div>
+      <h3>In-Depth Tarot Session</h3>
+      <p class="price">₹399</p>
+      <ul><li>20–30 minute session</li><li>Explore one area: career, relationships or personal growth</li><li>Detailed interpretation and a follow-up discussion</li></ul>
+      <a class="btn ghost" href="https://ig.me/m/antarsvara" target="_blank" rel="noopener">Book on Instagram</a>
+    </article>
+  </div>
+  <p class="yesno reveal">Just need a quick <b>Yes / No</b> answer? Ask about a Yes/No reading in your DM.</p>
+</section>
+
+<!-- how it works -->
+<section class="section steps-sec">
+  <div class="head reveal">
+    <p class="eyebrow">How it works</p>
+    <h2>Three small steps <em>to clarity</em></h2>
+  </div>
+  <div class="steps" id="steps">
+    <svg class="path" viewBox="0 0 1000 200" preserveAspectRatio="none" aria-hidden="true"><path id="stepPath" d="M167 100 C 290 0, 380 0, 500 100 S 710 200, 833 100"/></svg>
+    <div class="step reveal"><span class="node">1</span><h3>Send “TAROT”</h3><p>DM <b>@antarsvara</b> on Instagram and pick your reading.</p></div>
+    <div class="step reveal"><span class="node">2</span><h3>Share your question</h3><p>Tell us what's on your mind. As much or as little as you like.</p></div>
+    <div class="step reveal"><span class="node">3</span><h3>Receive your reading</h3><p>Your cards, their meaning and gentle guidance, sent with care.</p></div>
+  </div>
+</section>
+
+<!-- sound healing -->
+<section class="section sound" id="sound">
+  <div class="sound-copy reveal">
+    <p class="eyebrow">Sound &amp; inner wellness</p>
+    <h2>Let the bowl <em>speak first</em></h2>
+    <p class="sub">Singing bowls, a steel tongue drum and slow breath. Sound healing helps your body settle so your mind can listen. Tap the bowl and stay with the sound until it fades.</p>
+    <ul class="soft-list">
+      <li>Calms a racing mind before a reading</li>
+      <li>Helps release tension held in the body</li>
+      <li>Creates a quiet space to hear yourself</li>
+    </ul>
+  </div>
+  <button class="bowl" id="bowl" type="button" aria-label="Play the singing bowl">
+    <span class="waves" id="waves"></span>
+    <svg viewBox="0 0 240 170" aria-hidden="true">
+      <defs>
+        <linearGradient id="gold" x1="0" x2="1"><stop offset="0" stop-color="#a87a2c"/><stop offset=".45" stop-color="#f3d58f"/><stop offset="1" stop-color="#9b6e24"/></linearGradient>
+        <linearGradient id="goldIn" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5b4214"/><stop offset="1" stop-color="#c9a35a"/></linearGradient>
+      </defs>
+      <ellipse cx="120" cy="58" rx="100" ry="20" fill="url(#goldIn)"/>
+      <path d="M20 58 C 26 128, 70 160, 120 160 C 170 160, 214 128, 220 58 C 200 74, 160 80, 120 80 C 80 80, 40 74, 20 58 Z" fill="url(#gold)"/>
+      <ellipse cx="120" cy="58" rx="100" ry="20" fill="none" stroke="#f8e3ad" stroke-width="2"/>
+      <path d="M120 104 l5 14 14 5 -14 5 -5 14 -5 -14 -14 -5 14 -5 z" fill="#6b4c17" opacity=".7"/>
+    </svg>
+    <span class="bowl-label" id="bowlLabel">Tap to ring</span>
+  </button>
+</section>
+
+<!-- moon tonight -->
+<section class="section moon-sec">
+  <div class="moon-card reveal">
+    <svg class="moon" id="moonSvg" viewBox="0 0 120 120" aria-hidden="true">
+      <defs><radialGradient id="lit" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#fff7e6"/><stop offset="1" stop-color="#e3cf9f"/></radialGradient></defs>
+      <circle cx="60" cy="60" r="50" fill="#1d1a3e"/>
+      <path id="moonLit" fill="url(#lit)"/>
+      <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(245,223,176,.35)"/>
+    </svg>
+    <div>
+      <p class="eyebrow">The moon tonight</p>
+      <h2 id="moonName">Reading the sky…</h2>
+      <p class="sub" id="moonText"></p>
+      <p class="moon-meta" id="moonMeta"></p>
+    </div>
+  </div>
+</section>
+
+<!-- about -->
+<section class="section about" id="about">
+  <figure class="portrait reveal">
+    <span class="ring r1"></span><span class="ring r2"></span>
+    <img src="images/founder.jpg" alt="Riya Sharma, founder of AntarSvara, with singing bowls, a tongue drum and tarot cards" loading="lazy" width="480" height="640">
+    <figcaption class="name-tag">Riya Sharma <span>Founder · Tarot reader · Sound healer</span></figcaption>
+  </figure>
+  <div class="about-copy reveal">
+    <p class="eyebrow">The soul behind AntarSvara</p>
+    <h2>Hi, I'm <em>Riya Sharma</em></h2>
+    <p><b>Antar</b> means within. <b>Svara</b> means voice. I started AntarSvara on one belief: you already know more than you think. The cards and the singing bowls are simply my ways of quieting the noise so your own inner voice can be heard.</p>
+    <p>My readings are honest, kind and free of fear. Whether you're stuck on a decision, healing from something, or just curious, you'll be met with patience.</p>
+    <div class="about-actions">
+      <a class="btn" href="https://ig.me/m/antarsvara" target="_blank" rel="noopener">Book a reading with Riya</a>
+      <a class="btn ghost" href="https://www.instagram.com/_ritzii/" target="_blank" rel="noopener">Follow Riya · @_ritzii</a>
+    </div>
+  </div>
+</section>
+
+<!-- feedback -->
+<section class="section">
+  <div class="head reveal">
+    <p class="eyebrow">Kind words</p>
+    <h2>What people <em>felt</em></h2>
+  </div>
+  <div class="notes" id="notes"></div>
+</section>
+
+<!-- closing -->
+<section class="section closing reveal">
+  <h2 class="split">Your journey to clarity <em>begins within</em></h2>
+  <p class="sub">Send “TAROT” on Instagram and we'll find your reading together.</p>
+  <a class="btn big" href="https://ig.me/m/antarsvara" target="_blank" rel="noopener">✦ DM “TAROT” to book</a>
+</section>
+</main>
+
+<footer class="footer">
+  <img src="images/emblem.png" alt="" width="64" height="64" loading="lazy">
+  <p class="foot-name">AntarSvara</p>
+  <p>Hear what lies within · Founded by Riya Sharma</p>
+  <p class="foot-links"><a href="https://instagram.com/antarsvara" target="_blank" rel="noopener">@antarsvara</a> · <a href="https://www.instagram.com/_ritzii/" target="_blank" rel="noopener">@_ritzii</a> · <a href="https://linktr.ee/AntarSvara" target="_blank" rel="noopener">Linktree</a></p>
+  <p class="foot-note">Prototype. Tarot is for reflection and guidance, not a substitute for medical, legal or financial advice. Reviews shown are sample text.</p>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<script src="script.js?v=3"></script>
+</body>
+</html>
